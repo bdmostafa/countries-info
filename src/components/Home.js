@@ -53,10 +53,10 @@ const Home = ({ countries, setCountries }) => {
                     <TableHead>
                         <TableRow>
                             <TableCell>#No</TableCell>
-                            <TableCell align="left">Name</TableCell>
-                            <TableCell align="left">Flag</TableCell>
-                            <TableCell align="left">Region</TableCell>
-                            <TableCell align="left">Details</TableCell>
+                            <TableCell align="left"> <b>Name</b> </TableCell>
+                            <TableCell align="left"><b>Flag</b> </TableCell>
+                            <TableCell align="left"><b>Region</b> </TableCell>
+                            <TableCell align="left"><b>Details</b> </TableCell>
                         </TableRow>
                     </TableHead>
 

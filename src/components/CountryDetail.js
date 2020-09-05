@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const CountryDetail = ({ country }) => {
 
@@ -15,19 +16,22 @@ const CountryDetail = ({ country }) => {
             maxWidth: 345,
             marginLeft: 'auto',
             marginRight: 'auto',
+            marginTop: '20px',
+            color: 'black',
             a: {
                 textDecoration: 'none',
                 cursorPointer: 'none',
                 '&:hover': {
                     textDecoration: 'none'
                 }
-            },
+            }
         },
     });
 
     const classes = useStyles();
 
-    console.log(country)
+    console.log(country);
+
     // Destructuring country properties
     const {
         alpha2Code,
@@ -80,6 +84,9 @@ const CountryDetail = ({ country }) => {
                         Native Name: {nativeName}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
+                        Alpha 2 Code (as ISO 3166-1): {alpha2Code}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
                         <span>Alternative Name (Spelling): </span>
                         {
                             altSpellings && altSpellings.map(alt => alt).join(', ')
@@ -125,9 +132,9 @@ const CountryDetail = ({ country }) => {
                         Region: {region}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        <span>Regional Blocks:</span>
+                        <span>Regional Blocs:</span>
                         {
-                            regionalBlocs > 0 ? regionalBlocs.map(blocks => blocks).join(', ') : ' Not Found'
+                            regionalBlocs > 0 ? regionalBlocs.map(blocs => blocs).join(', ') : ' Not Found'
                         }
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
@@ -148,8 +155,11 @@ const CountryDetail = ({ country }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button variant="outlined" color="primary">
                     <a href={`https://en.wikipedia.org/wiki/${name}`} target="_blank" > See More on <strong>wikipedia</strong>  </a>
+                </Button>
+                <Button variant="outlined" color="primary">
+                    <Link to="/">Go Back</Link>
                 </Button>
             </CardActions>
         </Card>

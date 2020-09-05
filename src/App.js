@@ -8,13 +8,16 @@ import {
 import Home from './components/Home';
 import Country from './components/Country';
 import NoMatch from './components/NoMatch';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
 const [countries, setCountries] = useState([]);
 
   return (
     <Router>
+      <Header/>
       <Switch>
           <Route exact path="/">
             <Home countries={countries} setCountries={setCountries}/>
@@ -25,8 +28,8 @@ const [countries, setCountries] = useState([]);
           <Route path="*">
             <NoMatch />
           </Route>
-        </Switch>
-
+      </Switch>
+      <Footer/>
     </Router>
   );
 }
