@@ -11,7 +11,7 @@ import NoMatch from './components/NoMatch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-const [countries, setCountries] = useState();
+const [countries, setCountries] = useState([]);
 
   return (
     <Router>

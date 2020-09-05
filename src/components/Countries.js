@@ -1,22 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TableBody, TableRow, TableCell } from '@material-ui/core';
 
-const Countries = ({ index, country }) => {
-    console.log(country)
-    const {
-        name,
-        flag,
-        region
-    } = country;
+const Countries = ({ rows, style }) => {
+    
+    // console.log(rows.length);
+
     return (
-        <tr>
-            <td>{index + 1}</td>
-            <td>{name}</td>
-            <td> <img src={flag} alt="" style={{ width: '40px'}}/> </td>
-            <td>{region}</td>
-            <td> <Link to={`/country/${name}`}> Detail </Link> </td>
-        </tr>
-
+        <TableBody>
+            {rows.length > 0
+                && rows[0].map(country => (
+                    <TableRow key={country.no}>
+                        <TableCell component="th" scope="row">
+                            {country.no}
+                        </TableCell>
+                        <TableCell align="left">{country.name}</TableCell>
+                        <TableCell align="left"> <img className={style.img} src={country.flag} alt="" /> </TableCell>
+                        <TableCell align="left">{country.region}</TableCell>
+                        <TableCell align="left"> <Link to={`/country/${country.name}`}>Detail</Link> </TableCell>
+                    </TableRow>
+                ))}
+        </TableBody>
     );
 };
 
