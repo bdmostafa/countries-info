@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
-// import { Table, Container } from 'react-bootstrap';
 import Countries from './Countries';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Container } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
 const Home = ({ countries, setCountries }) => {
 
@@ -43,11 +40,11 @@ const Home = ({ countries, setCountries }) => {
     }
 
     // Get the countries data with map and store in rows array
-    const rows = [
+    const countryRows = [
         countries && countries.map((country, idx) => createData(idx + 1, country.name, country.flag, country.region))
     ];
 
-    console.log(rows);
+    // console.log(countryRows);
 
     return (
         <Container>
@@ -63,7 +60,7 @@ const Home = ({ countries, setCountries }) => {
                         </TableRow>
                     </TableHead>
 
-                    <Countries rows={rows} style={classes}></Countries>
+                    <Countries countryRows={countryRows} style={classes}></Countries>
                     
                 </Table>
             </TableContainer>

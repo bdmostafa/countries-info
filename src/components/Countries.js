@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TableBody, TableRow, TableCell } from '@material-ui/core';
 
-const Countries = ({ rows, style }) => {
+const Countries = ({ countryRows, style }) => {
     
-    // console.log(rows.length);
+    // console.log(countryRows.length);
 
     return (
         <TableBody>
-            {rows.length > 0
-                && rows[0].map(country => (
+            {countryRows.length > 0
+                && countryRows[0].map(country => (
                     <TableRow key={country.no}>
                         <TableCell component="th" scope="row">
                             {country.no}

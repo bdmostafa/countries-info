@@ -18,12 +18,12 @@ const loadData = () => {
 useEffect(loadData, [countryName]);
 
 
-console.log(country)
+console.log(country.name)
 // const { name } = country;
     return (
         <>
             {
-                country.length > 0 && <CountryDetail country={country} ></CountryDetail>
+                country && <CountryDetail country={country} ></CountryDetail>
             }
         </>
     );
